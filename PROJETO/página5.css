@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Milonga&display=swap');
+.container{
+    width: 100%;
+    height: 1000px;
+}
+body{
+    background-image:url(IMG/ajuda.webp);
+    background-repeat: no-repeat;
+    font-family: 'Milonga', cursive;
+    background-size: 100% 100%;
+}
+#menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color:  rgb(0, 85, 159);
+    height: 100px;
+    margin-left: -10px;
+    margin-right: -20px;
+    margin-top: -10px;
+}
+
+#menu a {
+    background-color: rgb(0, 85, 159);
+    color:rgb(255, 255, 255);
+    display:block;
+    padding:12px;
+    text-decoration: none;
+    width: 100px;
+    height: 70px;
+}
+#menu a:hover{
+    background-color: rgb(225, 174, 150);
+    width: 100px;
+    height: 75px;
+}
+#linha{
+    width: 1200px;
+    border: 1px solid rgb(0, 85, 159);
+}
+#corpo{
+    margin-left: 50px;
+    font-size: 20px;
+}
+
+
+#txt{
+    
+    margin-top: 20px;
+    background-color:rgba(255, 255, 255, 0.567);
+    width: 700px;
+    height: 30px;
+    border-radius: 15px;
+    border: 2px rgba(0, 0, 0, 0) solid;
+    z-index: 8;
+    font-size: 15px;
+    text-align: top;
+}
+.text-box {
+    margin-left: 760px;
+    margin-top: -360px;
+}
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: absolute;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+    background-color: #fff;
+    color: rgb(0, 85, 159);
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #fff;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveInBottom 5s ease-out;
+    animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+#palavras{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+#t, #se, #av, #f, #pa{
+    margin-top: 300px;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    z-index: 3;
+    color:  rgb(0, 85, 159);
+    font-size: 20px;
+}
+#linha-horizontal2{
+    width: 1670px;
+    border: 1px solid  rgb(0, 85, 159);
+    margin-left: 0px;
+    z-index: 3;
+    
+}
+#ajuda{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    font-size: 30px;
+}
+#caixa{
+    width: 1300px;
+    height: 350px;
+    background-color: rgba(255, 255, 255, 0.368);
+    border-radius: 15px;
+    z-index: 4;
+    position:absolute;
+    margin-top: 20px;
+    margin-left: 180px;
+}

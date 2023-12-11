@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Milonga&display=swap');
+.container{
+    width: 100%;
+    height: 1300px;
+}
+body{
+    background-image:url(IMG/ilhas-maldivas.webp);
+    background-repeat: no-repeat;
+    font-family: 'Milonga', cursive;
+    background-size: 100% 100%;
+}
+#menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color:  rgb(0, 85, 159);
+    height: 100px;
+    margin-left: -10px;
+    margin-right: -20px;
+    margin-top: -10px;
+}
+
+#menu a {
+    background-color: rgb(0, 85, 159);
+    color:rgb(255, 255, 255);
+    display:block;
+    padding:12px;
+    text-decoration: none;
+    width: 100px;
+    height: 70px;
+}
+#menu a:hover{
+    background-color: rgb(225, 174, 150);
+    width: 100px;
+    height: 75px;
+}
+.login{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 150px;
+    margin-left: 540px;
+    background-color:rgba(255, 255, 255, 0.897);
+    width: 600px;
+    height: 730px;
+    border-radius: 15px;
+    z-index: 8;
+}
+#Login{
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    margin-top: 60px;
+    color: rgb(0, 85, 159);
+    font-size: 40px;
+  
+}
+#map{
+    height: 100px;
+    margin-left: 300px;
+}
+#videoElement{
+    border-radius: 50px;
+}
+#form{
+  display:flex;
+  flex-direction: column;
+  margin-left: 50px;
+}
+#camera{
+   margin-left: 250px;
+  margin-top: -30px;
+}
+
+#fots{
+    border-radius: 80px;
+    margin-left: 220px;
+}
+#email,#senha{
+  background-color:rgb(0, 85, 159);
+  border:solid 2px #000000;
+  border-radius:10px;
+  position: relative;
+  float:left;
+  padding-left:5px;
+  font-size:18px;
+  height:20px;
+  width:400px;
+  margin-top: 20px;
+}
+#senha{
+    -webkit-text-security:disc;
+}
+.cadastro{
+    text-align: center;
+  }
+  #botão{
+margin-left: 160px;
+  }
+  #linha-horizontal2{
+    width: 1670px;
+    border: 1px solid rgb(255, 255, 255);
+    margin-left: 0px;
+    z-index: 3;
+    
+}
+#palavras{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+#t, #se, #av, #f, #pa{
+    margin-top: 200px;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    z-index: 3;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+}

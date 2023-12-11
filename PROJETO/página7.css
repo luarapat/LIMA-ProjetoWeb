@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Milonga&display=swap');
+.container{
+    width: 100%;
+    height: 1000px;
+}
+body{
+    background-image:url(IMG/pacotes\ completos.jpg);
+    background-repeat: no-repeat;
+    font-family: 'Milonga', cursive;
+    background-size: 100% 100%;
+}
+#menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color:  rgb(0, 85, 159);
+    height: 100px;
+    margin-left: -10px;
+    margin-right: -20px;
+    margin-top: -10px;
+}
+
+#menu a {
+    background-color: rgb(0, 85, 159);
+    color:rgb(255, 255, 255);
+    display:block;
+    padding:12px;
+    text-decoration: none;
+    width: 100px;
+    height: 70px;
+}
+#menu a:hover{
+    background-color: rgb(225, 174, 150);
+    width: 100px;
+    height: 74px;
+}
+
+#voos{
+    margin-left: 130px;
+      color: rgb(0, 85, 159);
+      font-size: 30px;
+      padding: 10px;
+  }
+  .voos{
+    margin-top: 8px;
+    margin-left: 100px;
+    background-color:rgba(255, 255, 255, 0.942);
+    width: 500px;
+    height: 50px;
+    border-radius: 15px;
+    z-index: 8;
+}
+#voos2{
+    margin-left: 130px;
+      color: rgb(0, 85, 159);
+      font-size: 30px;
+      padding: 10px;
+  }
+  .voos2{
+    margin-top: -80px;
+    margin-left: 1050px;
+    background-color:rgba(255, 255, 255, 0.942);
+    width: 500px;
+    height: 50px;
+    border-radius: 15px;
+    z-index: 8;
+}
+
+#linha1{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 50px;
+    padding: 20px;
+    margin-left: 30px;
+}
+
+#linha2{
+    display: flex;
+    justify-content: flex-start; 
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+#imagem{
+    margin-left: 40px;
+}
+
+#linha3{
+    display: flex;
+    justify-content: flex-end; 
+    margin-top: -700px;
+    margin-left: 970px;
+}
+#linha4{
+    display: flex;
+    justify-content: flex-end; 
+    margin-top: 30px;
+    margin-left: 1700px;
+}
+#palavras{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+#t, #se, #av, #f, #pa{
+    margin-top: -10px;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    z-index: 3;
+    color:  rgb(255, 255, 255);
+    font-size: 20px;
+}
+#linha-horizontal2{
+    width: 1670px;
+    border: 1px solid  rgb(255, 255, 255);
+    margin-left: 0px;
+    z-index: 3;
+    
+}
+
+#imagem, #imagem1{
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+#imagem:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+}
+#imagem1:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+}

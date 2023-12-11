@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="página2.css">
+    <title>Cadastro</title>
+    
+</head>
+<body>
+    <div class="container">
+        <div id="menu">
+            
+                <a href="http://127.0.0.1:5500/PROJETO/p%C3%A1gina2.html" class="active">Cadastro</a>
+                <a href="http://127.0.0.1:5500/PROJETO/p%C3%A1gina3.html"> Voos e preços</a>
+                <a href="http://127.0.0.1:5500/PROJETO/p%C3%A1gina7.html">Pacotes completos</a>                
+                <a href="http://127.0.0.1:5500/PROJETO/p%C3%A1gina5.html">Ajuda</a>
+                <a href="http://127.0.0.1:5500/PROJETO/p%C3%A1gina6.html#">Pagamento</a>
+                
+        </div>
+        
+        <div class="login">
+            <p id="Login">Cadastro</p>
+            <div id="camera">
+            <video id="videoElement" width="100" height="100" autoplay></video>
+           </div>
+            <div id="fots">
+            <button onclick="starCamera()">Tirar foto</button>
+            <button onclick="stopCamera()">Excluir foto</button>
+            </div>
+            <form id="form">
+                Email ou CPF
+                <input type="text" id="email">
+                <br>
+                <div id="Se">Senha</div>
+                <input type="senha" id="senha">
+                <br>
+                <p>latitude: <span id="latitude"></span></p>
+                <p>Longitude: <span id="longitude"></span></p> 
+                <div id="map"></div>
+                <div id="localização">
+                <button onclick="getLocation()"> encontrar localização </button>
+                </div>
+               
+                </form>
+                <div id="botão">
+                    <a href="http://127.0.0.1:5500/PROJETO/p%C3%A1gina3.html">
+                    <img src="IMG/entrar.png" width="250px">
+                    </a>
+                </div>
+                </div>
+                <div id="palavras">
+                    <p id="t"> Cadastro</p>
+                    <p id="se"> Voos e preços</p>
+                    <p id="av"> Pacotes Completos</p>
+                    <p id="f"> Ajuda</p>
+                    <p id="pa">Pagamento</p>
+            </div>
+            <div id="linha-horizontal2"></div>
+            </div>
+            <script>
+                 let videoStream;
+                async function starCamera(){
+                    const videoElement = document.getElementById('videoElement');
+                    try{
+                        videoStream = await navigator.mediaDevices.getUserMedia({video : true});
+                        videoElement.srcObject = videoStream;
+                    }catch(error){
+                        console.error('Erro ao abrir a camera', error);
+                        alert ('Erro ao abrir camera')
+                    }
+                }
+                async function stopCamera(){
+                    const videoElement = document.getElementById('videoElement');
+                    if(videoStream){
+                        const tracks = videoStream.getTracks();
+                        tracks.forEach(track => track.stop());
+                            videoElement.srcObject = null;
+                    }
+                }
+            
+                let map;
+        function initMap(latitude, longitude){
+            if(!isNaN(parseFloat(latitude)) && !isNaN(parseFloat(longitude))) {
+                map = new google.maps.Map(document.getElementById('map'),{   //map pega o mapa
+                    center: {lat: parseFloat(latitude), lng: parseFloat(longitude)},
+                    zoom: 12
+                });
+                new google.maps.Marker({  //marks marca o mapa com o title
+                    position: {lat: parseFloat(latitude), lng: parseFloat(longitude)},
+                    map: map,
+                    title: 'sua localização'
+                });
+            }else{
+                alert('coordenadas invalidas');
+            }
+        }
+
+        function getLocation(){
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            }else{
+                alert('Geolocalização não é suportada por este navegador')
+            }
+        }
+
+        function showPosition(position){
+            const latitudeElement = document.getElementById('latitude');
+            const longitudeElement = document.getElementById('longitude');
+
+            latitudeElement.innerText = position.coords.latitude;
+            longitudeElement.innerText = position.coords.longitude;
+
+            initMap(position.coords.latitude, position.coords.longitude);
+        }
+
+        function showError(error){
+            switch(error.code){
+                case error.PERMISSION_DENIED:
+                    alert('Permissão para geolocalização foi negada pelo usuário.');
+                break;
+                case error.POSITION_UNAVAILABLE:
+                    alert('Informações de localização indisponíveis.');
+                break;
+                case error.TIMEOUT:
+                    alert('Tempo limite esgotado ao tentar obter a localização');
+                break;
+                case error.UNKNOWN_ERROR:
+                    alert('Ocorreu um erro desconhecido ao tentar obter a localização');
+                break;
+            }
+        }
+    </script>
+    <!--API do google maps-->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy-kvsZDT4eSiKOtmC-ymTv_lxNTYDG2A"></script>
+    
+</body>
+</html>
